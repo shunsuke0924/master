@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="我々、TRSは不動産やITから繋がる 様々な「未来」を作り出すべく、 専門家として皆様のお悩みやご要望に対し、 常に全力でお応えしていきます。">
+        <title>株式会社TRS</title>
+        <link rel="icon" href="images/icon.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&family=M+PLUS+Rounded+1c:wght@700&family=Noto+Sans+JP&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Philosopher&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <a href="top.html" class="fv-icon">
+                <img src="images/TRS_brack.webp" alt="">
+            </a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="top.html">Top</a></li>
+                    <li><a href="top.html">Business</a></li>
+                    <li><a href="top.html">Company</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section>
+            <div>
+                <img src="images/contact_middle.webp">
+            </div>
+            <div>
+                <p class="contact-text-contact">Contact</p>
+                <p>お問い合わせ</p>
+            </div>
+            <div class="contact-contact">
+                <a href="#form" class="contact-contact-btn">一般の方はこちら</a>
+                <a href="#form" class="contact-contact-btn">法人の方はこちら</a>
+            </div>
+        </section>
+
+        <section id="form">
+            <div>
+                <div>
+                    <div>
+                        <label for="name" class="required">お名前</label><br>
+                            <input type="text" id="name" name="name" placeholder="山田太郎" required><br><br>
+                        <label for="name" class="required">フリガナ</label><br>
+                            <input type="text" id="name" name="name" placeholder="ヤマダ　タロウ" required><br><br>
+                    </div>
+                    <div>
+                        <label for="age" class="required">年齢</label><br>
+                            <select id="age" name="age" required>
+                            <option value=""> - </option>
+                            </select><br><br>
+                    </div>
+                    <div>
+                        <label for="mail" class="required">メールアドレス</label><br>
+                            <input type="text" id="mail" name="mail" placeholder="Your Mail Address" required><br><br>
+                        <label for="mail" class="required">メールアドレス（確認用）</label><br>
+                            <input type="text" id="mail" name="mail" placeholder="Your Mail Address Again" required><br><br>
+                    </div>
+                    <div>
+                        <label for="mail" class="required">電話番号</label><br>
+                            <input type="text" id="mail" name="mail" placeholder="000-0000-0000" required><br><br>
+                    </div>
+                    <div>
+                        <label for="mail" class="required">ご要望等（メッセージ）</label><br>
+                            <input type="text" id="mail" name="mail" placeholder="メッセージをご入力ください" required><br><br>
+                    </div>
+                </div>
+                <div>
+                    <div class="checkbox">
+                        <input type="checkbox" name="agree"> I agree to the Privacy Policy.
+                    </div>
+                    <div>
+                        <button>Send</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <footer>
+            <img src="images/TRS_white.webp">
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="top.html">Business</a></li>
+                    <li><a href="top.html">Company</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li><a href="top.html">Privacy Policy</a></li>
+                </ul>
+            </nav>
+        </footer>
+        <script>
+            const select = document.getElementById("age");
+            for (let i = 18; i <= 99; i++) {
+                const option = document.createElement("option");
+                option.value = i;
+                option.text = `${i}`;
+                select.appendChild(option);
+            }
+        </script>
+    </body>
+</html>
