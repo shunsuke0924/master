@@ -1,32 +1,323 @@
-/*　ここから追加　*/
-/*　top　*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+a, p {
+    font-family:'Noto serif JP', serif;
+}
+/* ーーーーーーーーーーーーーーーーーーーーーーーーー
+　　　　　　　　　　　ヘッダー
+ーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 1000; 
+}
+ul {
+    display: flex;
+    margin: 20px 95px 0 0;
+}
+nav ul li {
+    list-style: none;
+    margin: 20px 35px;
+    font-size: 20px;
+}
+header nav a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+.fv-icon {
+    width: 160px;
+    height: auto;
+    margin: 20px 0 0 95px;
+}
+/* ーーーーーーーーーーーーーーーーーーーーーーーーー
+　　　　　　　　　　　hero
+ーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+#hero {
+    height: 110vh;
+    background: linear-gradient(to right, #999, #ccc);
+    background-size: cover;
+    z-index: -1;
+}
+.top-right-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    height: 750px;
+    z-index: 1;
+}
+/* ーーーーーーーーーーーーーー
+　　　　　　text
+ーーーーーーーーーーーーーーー*/
+.top-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    left: 70px;
+    top: -40px;
+}
+.top-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 2;
+}
+.top-text1 {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+.top-text2 {
+    height: 90px;
+    width: auto;
+    object-fit: contain;
+    margin-top: 30px;
+}
+.top-text3 {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    margin-top: 30px;
+}
+/* ーーーーーーーーーーーーーー
+　　　　　　button
+ーーーーーーーーーーーーーーー*/
+.read-more-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:600px;
+    height: 100px;
+    padding: 15px 25px;
+    margin-left: 150px;
+    position: relative;
+    top: -50px;
+    border: 2px solid white;
+    border-radius: 0 50px 50px 50px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    background: linear-gradient(to right, #999, #ccc);
+    transition: background 0.3s ease;
+    }
+.read-more-button:hover {
+    background: black;
+}
+.read-more-button .text {
+    font-family:'Noto serif JP', serif;
+    flex: 1;
+    text-align: center;
+    font-size: 24px;
+}
+.read-more-button .circle {
+    width: 80px;
+    height: 80px;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+}
+.read-more-button .arrow {
+    font-size: 16px;
+    color: white;
+}
+/* ーーーーーーーーーーーーーーーーーーーーーーーーー
+　　　　　　　　　  　about1
+ーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+#about1 {
+    height: 110vh;
+    background-color: white;
+    background-size: cover;
+    z-index: -1;
+}
+.about1-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.about1-container img {
+    position: relative;
+    left: -50px;
+}
+.about1-container div img {
+    position: relative;
+    left: 0;
+    width: 150px;
+    height: auto;
+}
+.about1-container div p {
+    font-size: 25px;
+    line-height: 1.8;
+}
+/* ーーーーーーーーーーーーーーーーーーーーーーーーー
+　　　　　　　　　  　about2
+ーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+#about2 {
+    display: flex;
+    width: 100%;
+}
+.image-box {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    height: 300px;
+}
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 1;
+}
+.about2-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 2;
+    font-family: serif;
+}
+.about2-text p:first-child {
+    font-size: 24px;
+    font-weight: bold;
+}
+.about2-text p:last-child {
+    font-size: 20px;
+}
+/* ーーーーーーーーーーーーーーーーーーーーーーーーー
+　　　　　　　　　  　about3
+ーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+#about3 {
+    height: 95vh;
+    background-color: white;
+    background-size: cover;
+    z-index: -1;
+}
+.about3-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+}
+.about3-container img {
+    width: 400px;
+    height: auto;
+    position: relative;
+    left: 45px;
+    top: 0px;
+}
+.about3-container div img {
+    position: relative;
+    left: 0;
+    width: 150px;
+    height: auto;
+}
+.about3-container div p {
+    font-size: 25px;
+    line-height: 1.8;
+}
+/* ーーーーーーーーーーーーーーーーーーーーーーーーー
+　　　　　　　　　  　contact
+ーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+#contact {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-family: "serif";
+    overflow: hidden;
+}
+#contact img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    display: block;
+}
+.contact-content {
+  position: relative;
+  z-index: 3;
+  max-width: 800px;
+  padding: 20px;
+}
+.contact-title {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+.contact-message {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+.top-contact {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
 .top-contact-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: white;
-  color: black;
+  font-family:'Noto serif JP', serif;
+  padding: 14px 28px;
+  font-size: 16px;
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-
 .top-contact-btn:hover {
-  background-color: #2980b9;
-  color: #fff;
-}
-
-/*　contact　*/
-.required::after {
-  content: " *";
-  color: red;
-  font-weight: bold;
-}
-
-.contact-contact-btn {
-  display: inline-block;
-  padding: 10px 20px;
   background-color: white;
   color: black;
 }
-
-.contact-contact-btn:hover {
-  background-color: #2980b9;
-  color: #fff;
+/* ーーーーーーーーーーーーーーーーーーーーーーーーー
+　　　　　　　　　  　footer
+ーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: #999;
+}
+.footer-icon {
+    width: 160px;
+    height: auto;
+    margin-top: 50px;
+}
+footer nav a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
 }
