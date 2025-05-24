@@ -26,60 +26,62 @@
             </nav>
         </header>
 
-        <section>
-            <div>
-                <img src="images/contact_middle.webp">
-            </div>
-            <div>
-                <p class="contact-text-contact">Contact</p>
-                <p>お問い合わせ</p>
-            </div>
-            <div class="contact-contact">
-                <a href="#form" class="contact-contact-btn">一般の方はこちら</a>
-                <a href="#form" class="contact-contact-btn">法人の方はこちら</a>
-            </div>
-        </section>
+        <main>
+            <section id="hero-2">
+                <div>
+                    <img src="images/contact_middle.webp">
+                </div>
+                <div>
+                    <p class="contact-text-contact">Contact</p>
+                    <p class="contact-text-contact-jp">お問い合わせ</p>
+                </div>
+                <div class="contact-contact">
+                    <a href="#form" class="contact-contact-btn">一般の方はこちら</a>
+                    <a href="#form" class="contact-contact-btn">法人の方はこちら</a>
+                </div>
+            </section>
 
-        <section id="form">
-            <div>
+            <section id="form">
                 <div>
                     <div>
-                        <label for="name" class="required">お名前</label><br>
-                            <input type="text" id="name" name="name" placeholder="山田太郎" required><br><br>
-                        <label for="name" class="required">フリガナ</label><br>
-                            <input type="text" id="name" name="name" placeholder="ヤマダ　タロウ" required><br><br>
+                        <div>
+                            <label for="name" class="required">お名前</label><br>
+                                <input type="text" id="name" name="name" placeholder="山田太郎" required><br><br>
+                            <label for="name" class="required">フリガナ</label><br>
+                                <input type="text" id="name" name="name" placeholder="ヤマダ　タロウ" required><br><br>
+                        </div>
+                        <div>
+                            <label for="age" class="required">年齢</label><br>
+                                <select id="age" name="age" required>
+                                <option value=""> - </option>
+                                </select><br><br>
+                        </div>
+                        <div>
+                            <label for="mail" class="required">メールアドレス</label><br>
+                                <input type="text" id="mail" name="mail" placeholder="Your Mail Address" required><br><br>
+                            <label for="mail" class="required">メールアドレス（確認用）</label><br>
+                                <input type="text" id="mail" name="mail" placeholder="Your Mail Address Again" required><br><br>
+                        </div>
+                        <div>
+                            <label for="mail" class="required">電話番号</label><br>
+                                <input type="text" id="mail" name="mail" placeholder="000-0000-0000" required><br><br>
+                        </div>
+                        <div>
+                            <label for="mail" class="required">ご要望等（メッセージ）</label><br>
+                                <input type="text" id="mail" name="mail" placeholder="メッセージをご入力ください" required><br><br>
+                        </div>
                     </div>
                     <div>
-                        <label for="age" class="required">年齢</label><br>
-                            <select id="age" name="age" required>
-                            <option value=""> - </option>
-                            </select><br><br>
-                    </div>
-                    <div>
-                        <label for="mail" class="required">メールアドレス</label><br>
-                            <input type="text" id="mail" name="mail" placeholder="Your Mail Address" required><br><br>
-                        <label for="mail" class="required">メールアドレス（確認用）</label><br>
-                            <input type="text" id="mail" name="mail" placeholder="Your Mail Address Again" required><br><br>
-                    </div>
-                    <div>
-                        <label for="mail" class="required">電話番号</label><br>
-                            <input type="text" id="mail" name="mail" placeholder="000-0000-0000" required><br><br>
-                    </div>
-                    <div>
-                        <label for="mail" class="required">ご要望等（メッセージ）</label><br>
-                            <input type="text" id="mail" name="mail" placeholder="メッセージをご入力ください" required><br><br>
+                        <div class="checkbox">
+                            <input type="checkbox" name="agree"> I agree to the Privacy Policy.
+                        </div>
+                        <div>
+                            <button>Send</button>
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <div class="checkbox">
-                        <input type="checkbox" name="agree"> I agree to the Privacy Policy.
-                    </div>
-                    <div>
-                        <button>Send</button>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
+        </main>
     
         <footer>
             <img src="images/TRS_white.webp" class="footer-icon">
