@@ -142,6 +142,7 @@ header nav a {
     margin-left: 150px;
     position: relative;
     top: -150px;
+    top: -50px;
     border: 2px solid white;
     border-radius: 0 50px 50px 50px;
     color: white;
@@ -467,7 +468,6 @@ select {
 　　　　　　　　　  　footer
 ーーーーーーーーーーーーーーーーーーーーーーーーーー*/
 footer {
-    height: 220px;
     display: flex;
     flex-direction: column;
     align-items: center;
