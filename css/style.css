@@ -11,6 +11,9 @@ html, body {
 a, p {
     font-family:'Noto serif JP', serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 /* ーーーーーーーーーーーーーーーーーーーーーーーーー
 　　　　　　　　　　　header
 ーーーーーーーーーーーーーーーーーーーーーーーーーー*/
@@ -23,28 +26,36 @@ header {
 }
 ul {
     display: flex;
-    margin: 20px 95px 0 0;
+    margin: 20px 70px 0 0;
 }
 nav ul li {
     list-style: none;
-    margin: 20px 35px;
+    margin: 20px 28px;
     font-size: 20px;
+    transition: transform 0.2s ease;
+}
+nav ul li:hover {
+    transform: scale(1.1);
 }
 header nav a {
     color: black;
-    font-weight: bold;
     text-decoration: none;
 }
 .fv-icon {
     width: 160px;
     height: auto;
-    margin: 20px 0 0 95px;
+    margin: 32px 0 0 95px;
+    transition: transform 0.2s ease;
+}
+.fv-icon:hover {
+    transform: scale(1.1);
 }
 /* ーーーーーーーーーーーーーーーーーーーーーーーーー
 　　　　　　　　　　　top:hero
 ーーーーーーーーーーーーーーーーーーーーーーーーーー*/
 #hero {
-    height: 110vh;
+    position: relative;
+    height: 950px;
     background: linear-gradient(to right, #999, #ccc);
     background-size: cover;
     z-index: -1;
@@ -57,6 +68,32 @@ header nav a {
     height: 750px;
     z-index: 1;
 }
+#hero {
+    opacity: 0;
+    transition: opacity 5s ease;
+}
+
+#hero.visible {
+    opacity: 1;
+}
+.top-text1,
+.top-text2,
+.top-text3 {
+    opacity: 0;
+    transition: opacity 3s ease;
+}
+#hero.visible .top-text1 {
+    opacity: 1;
+    transition-delay: 1s;
+}
+#hero.visible .top-text2 {
+    opacity: 1;
+    transition-delay: 2.5s;
+}
+#hero.visible .top-text3 {
+    opacity: 1;
+    transition-delay: 4s;
+}
 /* ーーーーーーーーーーーーーー
 　　　　　　top:text
 ーーーーーーーーーーーーーーー*/
@@ -64,10 +101,10 @@ header nav a {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 950px;
     position: relative;
     left: 70px;
-    top: -40px;
+    top: -100px;
 }
 .top-text-container {
     display: flex;
@@ -104,7 +141,7 @@ header nav a {
     padding: 15px 25px;
     margin-left: 150px;
     position: relative;
-    top: -50px;
+    top: -150px;
     border: 2px solid white;
     border-radius: 0 50px 50px 50px;
     color: white;
@@ -140,7 +177,7 @@ header nav a {
 　　　　　　　　　  　top:about1
 ーーーーーーーーーーーーーーーーーーーーーーーーーー*/
 #about1 {
-    height: 110vh;
+    height: 870px;
     background-color: white;
     background-size: cover;
     z-index: -1;
@@ -149,7 +186,7 @@ header nav a {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 870px;
 }
 .about1-container img {
     position: relative;
@@ -176,7 +213,7 @@ header nav a {
     position: relative;
     flex: 1;
     overflow: hidden;
-    height: 300px;
+    height: 270px;
 }
 .image-box img {
     width: 100%;
@@ -203,17 +240,24 @@ header nav a {
     font-family: serif;
 }
 .about2-text p:first-child {
-    font-size: 24px;
+    font-size: 35px;
     font-weight: bold;
 }
 .about2-text p:last-child {
-    font-size: 20px;
+    font-size: 40px;
+}
+.fade-item {
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+.fade-item.visible {
+    opacity: 1;
 }
 /* ーーーーーーーーーーーーーーーーーーーーーーーーー
 　　　　　　　　　  　top:about3
 ーーーーーーーーーーーーーーーーーーーーーーーーーー*/
 #about3 {
-    height: 95vh;
+    height: 800px;
     background-color: white;
     background-size: cover;
     z-index: -1;
@@ -222,24 +266,20 @@ header nav a {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 95vh;
+    height: 800px;
 }
 .about3-container img {
     width: 400px;
     height: auto;
     position: relative;
     left: 45px;
-    top: 0px;
-}
-.about3-container div img {
-    position: relative;
-    left: 0;
-    width: 150px;
-    height: auto;
+    top: -30px;
 }
 .about3-container div p {
     font-size: 25px;
     line-height: 1.8;
+    position: relative;
+    top: -30px;
 }
 /* ーーーーーーーーーーーーーーーーーーーーーーーーー
 　　　　　　　　　  　top:contact
@@ -247,7 +287,7 @@ header nav a {
 #contact {
     position: relative;
     width: 100%;
-    height: 50vh;
+    height: 445px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -266,44 +306,48 @@ header nav a {
     z-index: 1;
     display: block;
 }
-.contact-content {
-  position: relative;
-  z-index: 3;
-  max-width: 800px;
-  padding: 20px;
+.contact-contact1 {
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+    padding: 20px;
 }
 .contact-title {
-  font-size: 48px;
-  margin-bottom: 20px;
+    font-size: 48px;
+    margin-bottom: 20px;
 }
 .contact-message {
-  font-size: 18px;
-  margin-bottom: 30px;
+    font-size: 24px;
+    margin-bottom: 30px;
 }
 .top-contact {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    flex-wrap: wrap;
 }
 .top-contact-btn {
-  font-family:'Noto serif JP', serif;
-  padding: 14px 28px;
-  font-size: 16px;
-  color: white;
-  background-color: transparent;
-  border: 2px solid white;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    font-family:'Noto serif JP', serif;
+    padding: 22px 50px;
+    font-size: 22px;
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    transition: transform 0.2s ease;
 }
 .top-contact-btn:hover {
-  background-color: white;
-  color: black;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: black;
+    transform: scale(1.1);
 }
 /* ーーーーーーーーーーーーーーーーーーーーーーーーー
 　　　　　　　　　　　contact:hero-2
 ーーーーーーーーーーーーーーーーーーーーーーーーーー*/
 #hero-2 {
+    display: flex;
+    flex-direction: column;
     height: 1000px;
     text-align: center;
     padding-top: 120px;
@@ -313,39 +357,117 @@ header nav a {
     height: 400px;
     object-fit: cover;
     display: block;
-    z-index: 1;
     margin: 0 auto;
 }
 .contact-text-contact {
-    height: 100%;
     padding-top: 30px;
     font-size: 55px;
 }
 .contact-text-contact-jp {
-    height: 100%;
     font-size: 24px;
     margin-top: -5px;
 }
+.contact-contact2 {
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    gap: 200px;
+}
 .contact-contact-btn {
-    height: 100%;
-  font-family:'Noto serif JP', serif;
-  padding: 14px 28px;
-  font-size: 16px;
-  color: black;
-  background-color: transparent;
-  text-decoration: none;
-  border: 2px solid black;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    font-family:'Noto serif JP', serif;
+    padding: 30px 80px;
+    font-size: 24px;
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+    border: 2px solid black;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 .contact-contact-btn:hover {
-  background-color: black;
-  color: white;
+    background-color: black;
+    color: white;
 }
+/* ーーーーーーーーーーーーーーーーーーーーーーーーー
+　　　　　　　　　　　contact:form
+ーーーーーーーーーーーーーーーーーーーーーーーーーー*/
+#form {
+    padding: 0 230px;
+}
+label.required {
+    font-family:'Noto serif JP', serif;
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+input[type="text"] {
+    width: 100%;
+    height: 50px;
+    padding: 0 10px;
+    font-size: 15px;
+    border: 0.5px solid #e0e0e0;
+    border-radius: 5px;
+}
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px 0 0 10px;
+    font-size: 15px;
+    border: 0.5px solid #e0e0e0;
+    resize: none;
+    border-radius: 5px;
+}
+select {
+    width: 50%;
+    height: 50px;
+    padding: 0 10px;
+    font-size: 15px;
+    border: 0.5px solid #e0e0e0;
+    border-radius: 5px;
+}
+#form-input::placeholder {
+    color: #e0e0e0;
+}
+.required::after {
+    content: "＊";
+    color: red;
+    font-size: 8px;
+    font-weight: bold;
+    vertical-align: super;  /* 上付き表示（右上寄せ） */
+}
+.checkbox {
+    text-align: center;
+}
+.send-btn {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 100px;
+}
+.btn {
+    font-family:'Noto serif JP', serif;
+    padding: 12px 150px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* 追加補足
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23999' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 40px;
+} */
 /* ーーーーーーーーーーーーーーーーーーーーーーーーー
 　　　　　　　　　  　footer
 ーーーーーーーーーーーーーーーーーーーーーーーーーー*/
 footer {
+    height: 220px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -356,10 +478,17 @@ footer {
 .footer-icon {
     width: 160px;
     height: auto;
-    margin-top: 50px;
+    margin-top: 30px;
+    transition: transform 0.2s ease;
+}
+.footer-icon:hover {
+    transform: scale(1.1);
 }
 footer nav a {
     color: white;
     font-weight: bold;
     text-decoration: none;
+}
+footer nav {
+    margin-top: -20px;
 }
